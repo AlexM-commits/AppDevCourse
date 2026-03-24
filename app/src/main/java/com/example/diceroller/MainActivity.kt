@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +17,14 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val rollerButton = findViewById<Button>(R.id.StartButton)
+        rollerButton.setOnClickListener {
+            startActivity(Intent(this, MainActivityRoller::class.java))
+        }
+        val exitButton = findViewById<Button>(R.id.buttonExit2)
+        exitButton.setOnClickListener {
+            finishAffinity()
         }
     }
 }

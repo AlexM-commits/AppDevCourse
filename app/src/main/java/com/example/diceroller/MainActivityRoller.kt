@@ -1,6 +1,8 @@
 package com.example.diceroller
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,10 @@ class MainActivityRoller : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val backButton = findViewById<Button>(R.id.button_Back)
+        backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }
